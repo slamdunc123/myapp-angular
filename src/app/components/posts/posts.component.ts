@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-posts',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
+  // inputs from parent component - users.component.ts
+  @Input() userId: number;
+  @Input() firstName: string;
+  @Input() lastName: string;
+  @Input() posts: object;
+  @Input() showPosts: boolean;
+  @Input() showNoPosts: boolean;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -1,1 +1,56 @@
-<p>users works!</p>
+<h2>Users</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+      <th>City</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td><img src="{{ user.image }}" /></td>
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <!-- calls getAge() and returns the age value-->
+      <td>{{ getAge(user.dob) }}</td>
+      <td>{{ user.location.city }}</td>
+      <td>
+        <button>
+          <a routerLink="/profile" routerLinkActive="active"
+            >View {{ user.firstName }}'s Profile</a
+          >
+        </button>
+        <button (click)="handleClick(user)">
+          View Posts
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <div *ngFor="let user of users" class="card mb-3">
+<div class="card-body">
+  <h5 class="card-title">User: {{ user.id }}</h5>
+  <p class="card-text">Name: {{ user.name }}</p>
+  <p class="card-text"><small class="text-muted">Role: {{ user.role }}</small></p>
+  <button class="btn btn-outline-info" (click)="handleClick(user)">
+    View Posts
+  </button>
+</div>
+</div> -->
+
+<app-posts
+  [userId]="userId"
+  [firstName]="firstName"
+  [lastName]="lastName"
+  [posts]="posts"
+  [showPosts]="showPosts"
+  [showNoPosts]="showNoPosts"
+>
+</app-posts>
