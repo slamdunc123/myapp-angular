@@ -2,9 +2,13 @@
 
 {{ id }}
 
-<div>
-  <img src="{{ user.image }}" />
-  {{ user.firstName }} {{ user.lastName }}
+<div class="flex-user-profile">
+  <div class="flex-user-profile__image">
+    <img src="{{ user.image }}" />
+  </div>
+  <div class="flex-user-profile__name">
+    {{ user.firstName }} {{ user.lastName }}
+  </div>
 </div>
 
 <app-menu [id]="id"></app-menu>
@@ -12,7 +16,7 @@
 <div class="user-details__list">
   <div><i class="fas fa-mobile-alt"></i> {{ user.phone }}</div>
   <div><i class="fas fa-envelope"></i> {{ user.email }}</div>
-  <div><i class="fas fa-birthday-cake"></i> {{ user.dob }}</div>
+  <div><i class="fas fa-birthday-cake"></i> {{ user.dob | date }}</div>
   <div>
     <i class="fas fa-home"></i> {{ user.location.city }},
     {{ user.location.state }}
@@ -20,5 +24,7 @@
 </div>
 
 <hr />
-
-member since - {{ user.createdAt }}
+<div>
+  <i class="far fa-calendar-check"></i> Member since -
+  {{ user.createdAt | date }}
+</div>

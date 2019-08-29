@@ -1,2 +1,24 @@
 .user-details__list {
 }
+
+.flex-user-profile {
+  border: 1px dotted grey;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+
+  &__image {
+    border: 1px dotted grey;
+    img {
+      flex: 1;
+      border: 2px solid black;
+      border-radius: 50%;
+    }
+  }
+
+  &__name {
+    border: 1px dotted grey;
+    flex: 2;
+    font-size: 4rem;
+  }
+}
