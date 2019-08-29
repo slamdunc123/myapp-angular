@@ -1,12 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostsService } from '../../services/posts.service';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss'],
-  providers: [PostsService]
+  providers: [PostsService, UsersService]
 })
 export class PostsComponent implements OnInit {
   // inputs from parent component - users.component.ts
@@ -19,10 +20,18 @@ export class PostsComponent implements OnInit {
 
   id: number;
   posts: any = [];
+  user: object = {
+    firstName: '',
+    lastName: ''
+  };
   private sub: any;
   // route: any;
 
-  constructor(private route: ActivatedRoute, private postsData: PostsService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private postsData: PostsService,
+    private usersData: UsersService
+  ) {}
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -45,6 +54,12 @@ export class PostsComponent implements OnInit {
         this.showPosts = false;
         this.showNoPosts = true;
       }
+    });
+    this.usersData.getUser(this.id).subscribe(usersData => {
+      this.user = usersData;
+      // this.user.phone = userData.phone
+      console.log(this.user);
+      // console.log(userData.phone);
     });
   }
 }

@@ -1,6 +1,12 @@
 <h2>Info</h2>
+
 {{ id }}
-{{ user.firstName }} {{ user.lastName }}
+
+<div>
+  <img src="{{ user.image }}" />
+  {{ user.firstName }} {{ user.lastName }}
+</div>
+
 <app-menu [id]="id"></app-menu>
 
 <ul>

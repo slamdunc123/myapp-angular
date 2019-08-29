@@ -1,9 +1,11 @@
 <h2>Posts</h2>
+
 {{ id }}
-<!-- {{showPosts}} -->
-<!-- initially false -->
-<!-- {{showNoPosts}} -->
-<!-- initially false -->
+
+<div>
+  <img src="{{ user.image }}" />
+  {{ user.firstName }} {{ user.lastName }}
+</div>
 
 <app-menu [id]="id"></app-menu>
 
