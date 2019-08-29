@@ -9,12 +9,15 @@
 
 <app-menu [id]="id"></app-menu>
 
-<ul>
-  <li>phone - {{ user.phone }}</li>
-  <li>email - {{ user.email }}</li>
-  <li>dob - {{ user.dob }}</li>
-  <li>city - {{ user.location.city }}, {{ user.location.state }}</li>
-</ul>
+<div class="user-details__list">
+  <div><i class="fas fa-mobile-alt"></i> {{ user.phone }}</div>
+  <div><i class="fas fa-envelope"></i> {{ user.email }}</div>
+  <div><i class="fas fa-birthday-cake"></i> {{ user.dob }}</div>
+  <div>
+    <i class="fas fa-home"></i> {{ user.location.city }},
+    {{ user.location.state }}
+  </div>
+</div>
 
 <hr />
 
