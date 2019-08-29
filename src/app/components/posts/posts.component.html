@@ -10,31 +10,13 @@
 <app-menu [id]="id"></app-menu>
 
 <br />
-<div *ngIf="firstName">{{ firstName }} {{ lastName }}'s posts</div>
-
-<table *ngIf="showPosts; else noPosts">
-  <!-- 1st if statement - if showPosts is true then render table else go to #noPosts -->
-  <tr>
-    <th>PostId</th>
-    <th>UserId</th>
-    <th>Post</th>
-  </tr>
-
-  <tr *ngFor="let post of posts">
-    <td>{{ post.id }}</td>
-    <td>{{ post.owner.id }}</td>
-    <td>{{ post.message }}</td>
-  </tr>
-</table>
-
-<ng-template #noPosts>
-  <!-- if showPosts is not true then do #noPosts -->
-  <div *ngIf="!showNoPosts; else showNoUserPosts">
-    <!-- 2nd if statement - if noShowPosts is not true then render div else go to #noUserPosts -->
-    Click 'View Posts' button
+<div *ngFor="let post of posts">
+  <!-- <div>{{ post.id }}</div>
+  <div>{{ post.owner.id }}</div> -->
+  <div><img src="{{ post.image }}" alt="" /></div>
+  <div>{{ post.message }}</div>
+  <div>Created {{ post.createdAt | date }}</div>
+  <div *ngFor="let tag of post.tags">
+    <div>{{ tag.title }}</div>
   </div>
-  <ng-template #showNoUserPosts>
-    <!-- if noShowPosts is not true then do #noUsersPosts -->
-    No posts for this user
-  </ng-template>
-</ng-template>
+</div>

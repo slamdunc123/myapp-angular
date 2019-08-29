@@ -19,6 +19,8 @@ export class PostsComponent implements OnInit {
   @Input() showNoPosts: boolean;
 
   id: number;
+  image: string;
+  tags: any = [];
   posts: any = [];
   user: object = {
     firstName: '',
