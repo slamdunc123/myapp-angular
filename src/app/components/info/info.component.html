@@ -1,0 +1,15 @@
+<h2>Info</h2>
+{{ id }}
+{{ user.firstName }} {{ user.lastName }}
+<app-menu [id]="id"></app-menu>
+
+<ul>
+  <li>phone - {{ user.phone }}</li>
+  <li>email - {{ user.email }}</li>
+  <li>dob - {{ user.dob }}</li>
+  <li>city - {{ user.location.city }}, {{ user.location.state }}</li>
+</ul>
+
+<hr />
+
+member since - {{ user.createdAt }}

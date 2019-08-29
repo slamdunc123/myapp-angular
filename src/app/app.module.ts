@@ -9,10 +9,17 @@ import { AppComponent } from './app.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProfilesComponent } from './components/profiles/profiles.component';
+import { InfoComponent } from './components/info/info.component';
+import { ActivityComponent } from './components/activity/activity.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 const appRoutes: Routes = [
   { path: '', component: UsersComponent },
-  { path: 'profile', component: ProfilesComponent }
+  // { path: 'profile/:id', component: ProfilesComponent },
+  { path: 'profile/:id/info', component: InfoComponent },
+  { path: 'profile/:id/posts', component: PostsComponent },
+  { path: 'profile/:id/activity', component: ActivityComponent }
 ];
 
 @NgModule({
@@ -20,7 +27,11 @@ const appRoutes: Routes = [
     AppComponent,
     PostsComponent,
     UsersComponent,
-    ProfilesComponent
+    ProfilesComponent,
+    InfoComponent,
+    ActivityComponent,
+    HeaderComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

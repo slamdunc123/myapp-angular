@@ -10,4 +10,8 @@ export class UsersService {
   getUsers() {
     return this.http.get('http://localhost:3100/users');
   }
+
+  getUser(id) {
+    return this.http.get('http://localhost:3100/users/' + id);
+  }
 }

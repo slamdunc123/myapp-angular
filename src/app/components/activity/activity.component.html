@@ -1,0 +1,14 @@
+<h2>Activity</h2>
+
+{{ id }}
+
+<app-menu [id]="id"></app-menu>
+
+<div>
+  <div *ngFor="let comment of comments">
+    <div>Comment</div>
+    <!-- <div>{{ comment.id }}</div> -->
+    <div>{{ comment.body }}</div>
+    <div><hr /></div>
+  </div>
+</div>

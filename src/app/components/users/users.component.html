@@ -22,12 +22,11 @@
       <td>{{ user.location.city }}</td>
       <td>
         <button>
-          <a routerLink="/profile" routerLinkActive="active"
+          <a
+            [routerLink]="['/profile', user.id, 'info']"
+            routerLinkActive="active"
             >View {{ user.firstName }}'s Profile</a
           >
-        </button>
-        <button (click)="handleClick(user)">
-          View Posts
         </button>
       </td>
     </tr>
@@ -45,12 +44,11 @@
 </div>
 </div> -->
 
-<app-posts
+<!-- <app-posts
   [userId]="userId"
   [firstName]="firstName"
   [lastName]="lastName"
-  [posts]="posts"
   [showPosts]="showPosts"
   [showNoPosts]="showNoPosts"
 >
-</app-posts>
+</app-posts> -->
