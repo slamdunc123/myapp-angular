@@ -29,9 +29,11 @@
     border: 1px dotted grey;
   }
   &__tags {
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     flex: 1;
     border: 1px dotted grey;
 
@@ -40,8 +42,8 @@
       background-color: black;
       color: white;
       // text-align: center;
-      width: 50px;
-      height: 30px;
+      width: 5rem;
+      height: 2rem;
       display: flex;
       flex: 1;
       align-items: center;

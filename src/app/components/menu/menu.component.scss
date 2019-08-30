@@ -3,22 +3,22 @@
   display: flex;
   // background-color: black;
   // color: white;
-}
 
-.menu__button {
-  flex: 1;
-  width: 2rem;
-  height: 2rem;
-  background-color: black;
-  // color: white;
-}
+  &__button {
+    flex: 1;
+    width: 2rem;
+    height: 2rem;
+    background-color: black;
+    // color: white;
+  }
 
-.menu__button:active {
-  width: 100%;
-  background-color: black;
-}
+  &__button:active {
+    width: 100%;
+    background-color: grey;
+  }
 
-.menu__button a {
-  color: white;
-  text-decoration: none;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }

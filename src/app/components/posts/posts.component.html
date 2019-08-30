@@ -20,8 +20,8 @@
     <div class="post__message">{{ post.message }}</div>
     <div class="post__created-at">Created {{ post.createdAt | date }}</div>
     <div class="post__tags">
-      <div *ngFor="let tag of post.tags" class="post__tags--tag">
-        <div>{{ tag.title }}</div>
+      <div *ngFor="let tag of post.tags">
+        <div class="post__tags--tag">{{ tag.title }}</div>
       </div>
     </div>
   </div>
