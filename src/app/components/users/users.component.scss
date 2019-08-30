@@ -1,12 +1,32 @@
 .user-block {
   display: flex;
   flex-direction: row;
+  border: 1px solid black;
+  margin: 2px 0 2px 0;
 
   &__image {
     flex: 1;
+    border: 1px dotted grey;
   }
 
   &__info {
     flex: 1;
+    border: 1px dotted grey;
+
+    :nth-child(-n + 2) {
+      font-weight: bold;
+      font-size: 2rem;
+    }
   }
+}
+
+.user-block__info-button {
+  display: block;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: 150px;
 }

@@ -10,17 +10,15 @@
         <div>{{ user.firstName }}</div>
         <div>{{ user.lastName }}</div>
         <!-- calls getAge() and returns the age value-->
-        <div>{{ getAge(user.dob) }}</div>
-        <div>{{ user.location.city }}</div>
-        <div>
-          <button>
-            <a
-              [routerLink]="['/profile', user.id, 'info']"
-              routerLinkActive="active"
-              >View {{ user.firstName }}'s Profile</a
-            >
-          </button>
-        </div>
+        <div>{{ getAge(user.dob) }} years old</div>
+        <div>Lives in {{ user.location.city }}</div>
+
+        <a
+          class="user-block__info-button"
+          [routerLink]="['/profile', user.id, 'info']"
+          routerLinkActive="active"
+          >View {{ user.firstName }}'s Profile</a
+        >
       </div>
     </div>
   </div>
