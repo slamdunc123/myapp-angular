@@ -1,0 +1,12 @@
+.user-block {
+  display: flex;
+  flex-direction: row;
+
+  &__image {
+    flex: 1;
+  }
+
+  &__info {
+    flex: 1;
+  }
+}

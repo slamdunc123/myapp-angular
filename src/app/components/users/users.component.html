@@ -1,37 +1,30 @@
 <h2>Users</h2>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Image</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Age</th>
-      <th>City</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.id }}</td>
-      <td><img src="{{ user.image }}" /></td>
-      <td>{{ user.firstName }}</td>
-      <td>{{ user.lastName }}</td>
-      <!-- calls getAge() and returns the age value-->
-      <td>{{ getAge(user.dob) }}</td>
-      <td>{{ user.location.city }}</td>
-      <td>
-        <button>
-          <a
-            [routerLink]="['/profile', user.id, 'info']"
-            routerLinkActive="active"
-            >View {{ user.firstName }}'s Profile</a
-          >
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div>
+  <div *ngFor="let user of users">
+    <div class="user-block">
+      <div class="user-block__image">
+        <!-- <div>{{ user.id }}</div> -->
+        <div><img src="{{ user.image }}" /></div>
+      </div>
+      <div class="user-block__info">
+        <div>{{ user.firstName }}</div>
+        <div>{{ user.lastName }}</div>
+        <!-- calls getAge() and returns the age value-->
+        <div>{{ getAge(user.dob) }}</div>
+        <div>{{ user.location.city }}</div>
+        <div>
+          <button>
+            <a
+              [routerLink]="['/profile', user.id, 'info']"
+              routerLinkActive="active"
+              >View {{ user.firstName }}'s Profile</a
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- <div *ngFor="let user of users" class="card mb-3">
 <div class="card-body">
