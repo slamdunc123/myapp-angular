@@ -1,0 +1,52 @@
+// /* Smartphones (portrait) ----------- */
+// @media only screen and (max-width: 320px) {
+.post {
+  // width: 320px;
+  border: 1px dotted grey;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+
+  &__image {
+    // width: 320px;
+    border: 1px dotted grey;
+    flex: 1;
+    img {
+      width: 300px;
+
+      border: 2px solid black;
+      border-radius: 2%;
+    }
+  }
+
+  &__message {
+    flex: 1;
+    border: 1px dotted grey;
+  }
+  &__created-at {
+    flex: 1;
+    border: 1px dotted grey;
+  }
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+    border: 1px dotted grey;
+
+    &--tag {
+      border: 1px dotted grey;
+      background-color: black;
+      color: white;
+      // text-align: center;
+      width: 50px;
+      height: 30px;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+// }
