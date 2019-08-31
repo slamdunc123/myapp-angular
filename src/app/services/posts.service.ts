@@ -8,6 +8,7 @@ export class PostsService {
   constructor(private http: HttpClient) {}
 
   getPosts(userId) {
+    console.log(userId);
     return this.http.get(`http://localhost:3100/posts?owner.id=${userId}`);
   }
 }

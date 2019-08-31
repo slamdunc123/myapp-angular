@@ -14,8 +14,9 @@
         <div>Lives in {{ user.location.city }}</div>
 
         <a
+          (click)="handleClick(user)"
           class="user-block__info-button"
-          [routerLink]="['/profile', user.id, 'info']"
+          [routerLink]="['/profiles', user.id]"
           routerLinkActive="active"
           >View {{ user.firstName }}'s Profile</a
         >

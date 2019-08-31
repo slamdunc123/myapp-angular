@@ -9,6 +9,7 @@ import { PostsService } from '../../services/posts.service';
   providers: [UsersService, PostsService]
 })
 export class UsersComponent implements OnInit {
+  // id: number = null;
   users: object = [];
   //passes down to child component - posts.component.ts
   posts: any = [];
@@ -41,16 +42,17 @@ export class UsersComponent implements OnInit {
     this.postsData.getPosts(user.id).subscribe(postsData => {
       this.posts = postsData;
       console.log(this.posts);
+      console.log(user.id);
 
-      if (this.posts.length > 0) {
-        console.log(this.posts);
-        this.showPosts = true;
-        this.showNoPosts = false;
-      } else {
-        console.log(this.posts);
-        this.showPosts = false;
-        this.showNoPosts = true;
-      }
+      // if (this.posts.length > 0) {
+      //   console.log(this.posts);
+      //   this.showPosts = true;
+      //   this.showNoPosts = false;
+      // } else {
+      //   console.log(this.posts);
+      //   this.showPosts = false;
+      //   this.showNoPosts = true;
+      // }
     });
   }
 

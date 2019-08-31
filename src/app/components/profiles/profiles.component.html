@@ -1,6 +1,19 @@
 <p>profiles works!</p>
+<a
+  [routerLink]="['']"
+  routerLinkActive="active"
+  class="posts-container__back-button"
+  >Back</a
+>
 
 {{ id }}
+
+<div>
+  <img src="{{ user.image }}" />
+  {{ user.firstName }} {{ user.lastName }}
+</div>
+
+<app-menu [id]="id"></app-menu>
 
 <router-outlet></router-outlet>
 

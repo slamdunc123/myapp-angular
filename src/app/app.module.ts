@@ -13,23 +13,33 @@ import { InfoComponent } from './components/info/info.component';
 import { ActivityComponent } from './components/activity/activity.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ProfilesModule } from './components/profiles/profiles.module';
 
 const appRoutes: Routes = [
   { path: '', component: UsersComponent },
-  // { path: 'profile/:id', component: ProfilesComponent },
-  { path: 'profile/:id/info', component: InfoComponent },
-  { path: 'profile/:id/posts', component: PostsComponent },
-  { path: 'profile/:id/activity', component: ActivityComponent }
+  {
+    path: 'profiles/:id',
+    component: ProfilesComponent,
+    children: [
+      { path: '', redirectTo: 'info', pathMatch: 'full' },
+      { path: 'info', component: InfoComponent },
+      { path: 'posts', component: PostsComponent },
+      { path: 'activity', component: ActivityComponent }
+    ]
+  }
+  // { path: 'profile/:id/info', component: InfoComponent }
+  // { path: 'profile/:id/posts', component: PostsComponent },
+  // { path: 'profile/:id/activity', component: ActivityComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent,
+    // PostsComponent,
     UsersComponent,
     ProfilesComponent,
-    InfoComponent,
-    ActivityComponent,
+    // InfoComponent,
+    // ActivityComponent,
     HeaderComponent,
     MenuComponent
   ],
@@ -37,6 +47,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ProfilesModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

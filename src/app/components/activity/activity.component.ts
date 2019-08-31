@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { CommentsService } from '../../services/comments.service';
 
@@ -20,17 +20,22 @@ export class ActivityComponent implements OnInit {
   private sub: any;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private usersData: UsersService,
     private commentsData: CommentsService
   ) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id']; // (+) converts string 'id' to a number
+    this.sub = this.router.routerState
+      .parent(this.route)
+      .params.subscribe(params => {
+        this.id = +params.id; // (+) converts string 'id' to a number
+        console.log(params);
 
-      // In a real app: dispatch action to load the details here.
-    });
+        // In a real app: dispatch action to load the details here.
+      });
+    console.log(this.id);
     this.usersData.getUser(this.id).subscribe(usersData => {
       this.user = usersData;
       // this.user.phone = userData.phone

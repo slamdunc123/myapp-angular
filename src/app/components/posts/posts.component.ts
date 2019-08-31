@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PostsService } from '../../services/posts.service';
 import { UsersService } from '../../services/users.service';
 
@@ -30,17 +30,21 @@ export class PostsComponent implements OnInit {
   // route: any;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private postsData: PostsService,
     private usersData: UsersService
   ) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id']; // (+) converts string 'id' to a number
+    this.sub = this.router.routerState
+      .parent(this.route)
+      .params.subscribe(params => {
+        this.id = +params.id; // (+) converts string 'id' to a number
+        console.log(params);
 
-      // In a real app: dispatch action to load the details here.
-    });
+        // In a real app: dispatch action to load the details here.
+      });
     console.log(this.id);
 
     this.postsData.getPosts(this.id).subscribe(postsData => {
