@@ -1,11 +1,9 @@
 <h2>Users</h2>
-<div>
+<div class="users">
   <div *ngFor="let user of users">
     <div class="user-block">
-      <div class="user-block__image">
-        <!-- <div>{{ user.id }}</div> -->
-        <div><img src="{{ user.image }}" /></div>
-      </div>
+      <!-- <div>{{ user.id }}</div> -->
+      <img src="{{ user.image }}" />
       <div class="user-block__info">
         <div>{{ user.firstName }}</div>
         <div>{{ user.lastName }}</div>
@@ -15,10 +13,9 @@
 
         <a
           (click)="handleClick(user)"
-          class="user-block__info-button"
           [routerLink]="['/profiles', user.id]"
           routerLinkActive="active"
-          >View {{ user.firstName }}'s Profile</a
+          >{{ user.firstName }}'s Profile</a
         >
       </div>
     </div>

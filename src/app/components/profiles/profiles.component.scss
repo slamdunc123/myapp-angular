@@ -1,0 +1,37 @@
+.back-button {
+  width: 100px;
+  height: 2rem;
+  a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 2rem;
+    background-color: black;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+  }
+  a:hover {
+    font-size: 1.2rem;
+    background-color: grey;
+    box-shadow: 0px 15px 20px rgba(128, 128, 128, 0.5);
+    color: #fff;
+    transform: translateY(-5px);
+  }
+
+  a:focus {
+    background-color: grey;
+  }
+}
+
+.profile-header {
+  display: flex;
+  border: 1px solid grey;
+}

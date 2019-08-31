@@ -1,24 +1,36 @@
 .menu {
   width: 100vw;
+  align-items: center;
   display: flex;
-  // background-color: black;
-  // color: white;
-
-  &__button {
-    flex: 1;
-    width: 2rem;
-    height: 2rem;
-    background-color: black;
-    // color: white;
-  }
-
-  &__button:active {
-    width: 100%;
-    background-color: grey;
-  }
+  justify-content: center;
+  // border: 1px dotted grey;
 
   a {
     color: white;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 2rem;
+    background-color: black;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  a:hover {
+    font-size: 1.2rem;
+    background-color: grey;
+    box-shadow: 0px 15px 20px rgba(128, 128, 128, 0.5);
+    color: #fff;
+    transform: translateY(-3px);
+  }
+
+  a:focus {
+    background-color: grey;
+    transform: translateY(0px);
   }
 }

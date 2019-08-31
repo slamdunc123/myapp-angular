@@ -1,18 +1,19 @@
-<a
-  [routerLink]="['']"
-  routerLinkActive="active"
-  class="posts-container__back-button"
-  >Back</a
->
+<div class="back-button">
+  <a [routerLink]="['']" routerLinkActive="active">Back</a>
+</div>
 
 {{ id }}
 
-<div>
-  <img src="{{ user.image }}" />
-  {{ user.firstName }} {{ user.lastName }}
+<div class="profile-header">
+  <div class="profile-header__image">
+    <img src="{{ user.image }}" />
+  </div>
+  <div class="profile-header__name">
+    {{ user.firstName }} {{ user.lastName }}
+  </div>
 </div>
 
-<app-menu [id]="id"></app-menu>
+<app-menu></app-menu>
 
 <router-outlet></router-outlet>
 
