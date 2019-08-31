@@ -37,14 +37,12 @@ export class PostsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.sub = this.router.routerState
-      .parent(this.route)
-      .params.subscribe(params => {
-        this.id = +params.id; // (+) converts string 'id' to a number
-        console.log(params);
+    this.sub = this.route.parent.params.subscribe(params => {
+      this.id = +params.id; // (+) converts string 'id' to a number
+      console.log(params);
 
-        // In a real app: dispatch action to load the details here.
-      });
+      // In a real app: dispatch action to load the details here.
+    });
     console.log(this.id);
 
     this.postsData.getPosts(this.id).subscribe(postsData => {
