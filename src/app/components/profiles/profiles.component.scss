@@ -42,15 +42,26 @@
 
 .profile-header {
   display: flex;
+  align-items: center;
   // flex: 1;
   width: 100%;
-  border: 1px solid grey;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  // border: 1px solid grey;
 
   &__image {
     flex: 1;
+
+    img {
+      border-radius: 50%;
+      box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.5);
+      width: 150px;
+    }
   }
   &__name {
-    flex: 3;
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 2.5rem;
   }
 }
 
