@@ -1,0 +1,9 @@
+.app-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // border: 2px dotted blue;
+  max-width: 640px;
+  background-color: #fff;
+}

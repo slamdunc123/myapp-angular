@@ -1,3 +1,12 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dotted red;
+  max-width: 640px;
+}
+
 .back-button {
   width: 100px;
   height: 2rem;
@@ -33,5 +42,18 @@
 
 .profile-header {
   display: flex;
+  // flex: 1;
+  width: 100%;
   border: 1px solid grey;
+
+  &__image {
+    flex: 1;
+  }
+  &__name {
+    flex: 3;
+  }
 }
+
+// .profile-menu {
+//   flex: 1;
+// }

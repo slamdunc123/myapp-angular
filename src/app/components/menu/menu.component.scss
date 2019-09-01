@@ -1,11 +1,13 @@
-.menu {
-  width: 100vw;
-  align-items: center;
+.menu-container {
+  // width: 100vw;
+  // align-items: center;
   display: flex;
+  // flex: 1;
   justify-content: center;
   // border: 1px dotted grey;
 
   a {
+    width: 70px;
     color: white;
     text-decoration: none;
     display: flex;
@@ -20,6 +22,7 @@
     transition: all 0.2s ease 0s;
     cursor: pointer;
     outline: none;
+    // width: 100px;
   }
   a:hover {
     font-size: 1.2rem;

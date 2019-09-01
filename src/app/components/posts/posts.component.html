@@ -3,16 +3,19 @@
 
   {{ id }}
 
-  <br />
-  <div *ngFor="let post of posts" class="post">
+  <div *ngFor="let post of posts">
     <!-- <div>{{ post.id }}</div>
   <div>{{ post.owner.id }}</div> -->
-    <div class="post__image"><img src="{{ post.image }}" alt="" /></div>
-    <div class="post__message">{{ post.message }}</div>
-    <div class="post__created-at">Created {{ post.createdAt | date }}</div>
-    <div class="post__tags">
-      <div *ngFor="let tag of post.tags">
-        <div class="post__tags--tag">{{ tag.title }}</div>
+    <div class="post-block">
+      <div class="post-block__image"><img src="{{ post.image }}" alt="" /></div>
+      <div class="post-block__message">{{ post.message }}</div>
+      <div class="post-block__created-at">
+        Created {{ post.createdAt | date }}
+      </div>
+      <div class="post-block__tags">
+        <div *ngFor="let tag of post.tags">
+          <div class="post-block__tags--tag">{{ tag.title }}</div>
+        </div>
       </div>
     </div>
   </div>
