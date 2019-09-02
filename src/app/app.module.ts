@@ -14,6 +14,7 @@ import { ActivityComponent } from './components/activity/activity.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProfilesModule } from './components/profiles/profiles.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: UsersComponent },
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
       { path: 'posts', component: PostsComponent },
       { path: 'activity', component: ActivityComponent }
     ]
-  }
+  },
+  { path: '**', component: PageNotFoundComponent }
   // { path: 'profile/:id/info', component: InfoComponent }
   // { path: 'profile/:id/posts', component: PostsComponent },
   // { path: 'profile/:id/activity', component: ActivityComponent }
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
     // InfoComponent,
     // ActivityComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
