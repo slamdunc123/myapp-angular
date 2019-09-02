@@ -1,8 +1,8 @@
 <!-- <h2>Info</h2> -->
 
-{{ id }}
+<!-- {{ id }} -->
 
-<div class="user-details__list">
+<div class="info-details__list">
   <div><i class="fas fa-mobile-alt"></i> {{ user.phone }}</div>
   <div><i class="fas fa-envelope"></i> {{ user.email }}</div>
   <div><i class="fas fa-birthday-cake"></i> {{ user.dob | date }}</div>
@@ -13,7 +13,9 @@
 </div>
 
 <hr />
-<div>
-  <i class="far fa-calendar-check"></i> Member since -
-  {{ user.createdAt | date }}
+<div class="info_details__member-since">
+  <div>
+    <i class="far fa-calendar-check"></i> Member since -
+    {{ user.createdAt | date }}
+  </div>
 </div>
