@@ -19,12 +19,25 @@ export class ActivityComponent implements OnInit {
   comments: any = [];
   private sub: any;
 
+  config: any;
+  collection = { count: 4, data: [] };
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private usersData: UsersService,
     private commentsData: CommentsService
-  ) {}
+  ) {
+    this.config = {
+      itemsPerPage: 10,
+      currentPage: 1,
+      totalItems: this.collection.count
+    };
+  }
+
+  pageChanged(event) {
+    this.config.currentPage = event;
+  }
 
   ngOnInit() {
     this.sub = this.route.parent.params.subscribe(params => {

@@ -15,6 +15,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 const appRoutes: Routes = [
   { path: '', component: UsersComponent },
   {
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxPaginationModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

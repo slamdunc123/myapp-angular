@@ -3,10 +3,27 @@
 {{ id }}
 
 <div>
-  <div *ngFor="let comment of comments">
+  <div class="pagination-container">
+    <pagination-controls
+      (pageChange)="currentPage = $event"
+    ></pagination-controls>
+  </div>
+
+  <div
+    *ngFor="
+      let comment of comments
+        | paginate: { itemsPerPage: 10, currentPage: currentPage }
+    "
+  >
     <div>Comment</div>
     <!-- <div>{{ comment.id }}</div> -->
     <div>{{ comment.body }}</div>
     <div><hr /></div>
+  </div>
+  <div class="pagination-container">
+    <pagination-template
+      class="test"
+      (pageChange)="currentPage = $event"
+    ></pagination-template>
   </div>
 </div>
