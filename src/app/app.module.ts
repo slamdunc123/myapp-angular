@@ -13,7 +13,6 @@ import { InfoComponent } from './components/info/info.component';
 import { ActivityComponent } from './components/activity/activity.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { ProfilesModule } from './components/profiles/profiles.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
@@ -29,19 +28,16 @@ const appRoutes: Routes = [
     ]
   },
   { path: '**', component: PageNotFoundComponent }
-  // { path: 'profile/:id/info', component: InfoComponent }
-  // { path: 'profile/:id/posts', component: PostsComponent },
-  // { path: 'profile/:id/activity', component: ActivityComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    // PostsComponent,
+    PostsComponent,
     UsersComponent,
     ProfilesComponent,
-    // InfoComponent,
-    // ActivityComponent,
+    InfoComponent,
+    ActivityComponent,
     HeaderComponent,
     MenuComponent,
     PageNotFoundComponent
@@ -50,7 +46,6 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ProfilesModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
