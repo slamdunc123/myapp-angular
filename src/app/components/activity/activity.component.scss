@@ -1,6 +1,8 @@
 .pagination-container {
   text-align: center;
-  li {
-    background-color: black !important;
-  }
+}
+
+pagination-controls ::ng-deep .ngx-pagination .current {
+  background: gray;
+  border-radius: 5px;
 }
