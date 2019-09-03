@@ -17,6 +17,15 @@
           <div class="post-block__tags--tag">{{ tag.title }}</div>
         </div>
       </div>
+      <div class="post-block__toggle-button">
+        <div *ngIf="show; else notShow">
+          <i (click)="hideComments()" class="fas fa-chevron-up"></i>
+        </div>
+
+        <ng-template #notShow>
+          <i (click)="showComments()" class="fas fa-chevron-down"></i>
+        </ng-template>
+      </div>
     </div>
   </div>
 </div>

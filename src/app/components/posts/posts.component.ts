@@ -26,6 +26,8 @@ export class PostsComponent implements OnInit {
     firstName: '',
     lastName: ''
   };
+  show: boolean = false;
+  hide: boolean = true;
   private sub: any;
   // route: any;
 
@@ -65,5 +67,16 @@ export class PostsComponent implements OnInit {
       console.log(this.user);
       // console.log(userData.phone);
     });
+  }
+
+  showComments() {
+    console.log('show');
+    this.show = true;
+    this.hide = false;
+  }
+  hideComments() {
+    console.log('hide');
+    this.show = false;
+    this.hide = true;
   }
 }
