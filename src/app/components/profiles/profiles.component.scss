@@ -3,8 +3,10 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border: 1px dotted red;
+  // border: 1px dotted red;
   max-width: 640px;
+  margin: 10px;
+  background-color: rgb(240, 240, 240);
 }
 
 .back-button {
@@ -43,7 +45,7 @@
 .profile-header {
   display: flex;
   align-items: center;
-  // flex: 1;
+  flex: 1;
   width: 100%;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
