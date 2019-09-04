@@ -52,5 +52,14 @@
       justify-content: center;
     }
   }
+
+  &__comments {
+    text-align: center;
+    i {
+      font-size: 2rem;
+      background-color: #fff;
+      border: none;
+    }
+  }
 }
 // }

@@ -3,7 +3,7 @@
 
   <!-- {{ id }} -->
 
-  <div *ngFor="let post of posts">
+  <div *ngFor="let post of posts; let i = index">
     <!-- <div>{{ post.id }}</div>
   <div>{{ post.owner.id }}</div> -->
     <div class="post-block">
@@ -17,13 +17,25 @@
           <div class="post-block__tags--tag">{{ tag.title }}</div>
         </div>
       </div>
-      <div class="post-block__toggle-button">
-        <div *ngIf="show; else notShow">
-          <i (click)="hideComments()" class="fas fa-chevron-up"></i>
+      <div class="post-block__comments">
+        <div *ngIf="show === i; else notShow">
+          <!-- Post Id = {{ i }} -->
+          <a (click)="hideComments(post, i)">
+            <i class="fas fa-chevron-circle-up"></i>
+          </a>
+
+          <div class="post-block__comments-block">
+            <div *ngFor="let postComment of postComments">
+              {{ postComment.id }} - {{ postComment.body }}
+            </div>
+          </div>
         </div>
 
         <ng-template #notShow>
-          <i (click)="showComments()" class="fas fa-chevron-down"></i>
+          <a (click)="showComments(post, i)">
+            <i class="fas fa-chevron-circle-down"></i>
+          </a>
+          <div class="post-block__comments-block"></div>
         </ng-template>
       </div>
     </div>
