@@ -31,7 +31,7 @@ export class PostsComponent implements OnInit {
   comments: any = [];
   postComments: any = [];
 
-  show: number = null;
+  showPostComments: number = null;
   private sub: any;
 
   // route: any;
@@ -86,17 +86,25 @@ export class PostsComponent implements OnInit {
     console.log('show');
     console.log(postCommentsData);
     this.postComments = postCommentsData;
+    console.log(this.postComments);
 
     this.postId = post.id;
-    this.show = i;
+    this.showPostComments = i;
     // this.show = !this.show;
   }
   hideComments(post, i) {
+    const postCommentsData = this.comments.filter(
+      comment => comment.postId === post.id
+    );
     console.log(post.id);
     console.log(i);
     console.log('hide');
     // this.show = !this.show;
-    // this.postId = post.id;
-    this.show = null;
+
+    this.postComments = postCommentsData;
+    console.log(this.postComments);
+
+    this.postId = post.id;
+    this.showPostComments = null;
   }
 }

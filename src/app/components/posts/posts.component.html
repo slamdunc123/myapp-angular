@@ -3,6 +3,8 @@
 
   <!-- {{ id }} -->
 
+  <!-- loop through and display all posts for user -->
+
   <div *ngFor="let post of posts; let i = index">
     <!-- <div>{{ post.id }}</div>
   <div>{{ post.owner.id }}</div> -->
@@ -17,21 +19,38 @@
           <div class="post-block__tags--tag">{{ tag.title }}</div>
         </div>
       </div>
+
+      <!-- create comments area for each post -->
       <div class="post-block__comments">
-        <div *ngIf="show === i; else notShow">
+        <!-- show post comments area on click (of chevron) if showPostComments value is equal to index postion of post - this is the event handling for each post click-->
+        <div *ngIf="showPostComments === i; else notShowPostComments">
           <!-- Post Id = {{ i }} -->
+          <!-- pass in the post object from posts and the index positon of the post into the hideComments function-->
           <a (click)="hideComments(post, i)">
             <i class="fas fa-chevron-circle-up"></i>
           </a>
+          <!-- show post comments if there are any for the clicked post-->
 
           <div class="post-block__comments-block">
+          <div *ngIf="postComments.length > 0; else notPostComments">
+          
             <div *ngFor="let postComment of postComments">
               {{ postComment.id }} - {{ postComment.body }}
             </div>
           </div>
+          <ng-template #notPostComments>
+              <div class="post-block__comments-block">
+            <p>No comments for this post</p>
+              </div>
+          </ng-template>
         </div>
 
-        <ng-template #notShow>
+
+
+      </div>
+
+        <!-- show empty post comments area on click (of chevron) if showPostComments value is not equal to index postion of post - this is the event handling for each post click-->
+        <ng-template #notShowPostComments>
           <a (click)="showComments(post, i)">
             <i class="fas fa-chevron-circle-down"></i>
           </a>
