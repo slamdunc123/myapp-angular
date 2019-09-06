@@ -32,12 +32,15 @@
           <!-- show post comments if there are any for the clicked post-->
 
           <div class="post-block__comments-block">
+            <!-- check if there are any post comments ie the array of post comments is greater than zero -->
           <div *ngIf="postComments.length > 0; else notPostComments">
           
+            <!-- show comments - if post comments -->
             <div *ngFor="let postComment of postComments">
               {{ postComment.id }} - {{ postComment.body }}
             </div>
           </div>
+          <!-- show message - if no post comments -->
           <ng-template #notPostComments>
               <div class="post-block__comments-block">
             <p>No comments for this post</p>
