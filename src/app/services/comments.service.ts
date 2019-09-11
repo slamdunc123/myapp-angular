@@ -11,9 +11,9 @@ export class CommentsService {
     return this.http.get(`http://localhost:3100/comments?authorId=${userId}`);
   }
 
-  getCommentsForPost(userId, postId) {
-    return this.http.get(
-      `http://localhost:3100/comments?authorId=${userId}?postId=${postId}`
-    );
-  }
+  // getCommentsForPost(userId, postId) {
+  //   return this.http.get(
+  //     `http://localhost:3100/comments?authorId=${userId}?postId=${postId}`
+  //   );
+  // }
 }

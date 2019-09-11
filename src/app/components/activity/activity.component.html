@@ -9,15 +9,15 @@
     ></pagination-controls>
   </div>
 
-  <div
+  <div class="comments-container"
     *ngFor="
       let comment of comments
         | paginate: { itemsPerPage: 10, currentPage: currentPage }
     "
   >
     
-    <div>Comment: {{ comment.id }}</div>
-    <div>{{ comment.body }}</div>
+    <div class="comments-container__id">Comment: {{ comment.id }}</div>
+    <div class="comments-container__body">{{ comment.body }}</div>
     <div><hr /></div>
   </div>
 </div>

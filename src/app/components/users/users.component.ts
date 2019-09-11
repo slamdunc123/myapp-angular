@@ -39,10 +39,10 @@ export class UsersComponent implements OnInit {
 
     // this.userId = user.id;
     // console.log(this.userId)
-    this.postsData.getPosts(user.id).subscribe(postsData => {
-      this.posts = postsData;
-      console.log(this.posts);
-      console.log(user.id);
+    // this.postsData.getPosts(user.id).subscribe(postsData => {
+    //   this.posts = postsData;
+    //   console.log(this.posts);
+    //   console.log(user.id);
 
       // if (this.posts.length > 0) {
       //   console.log(this.posts);
@@ -53,7 +53,7 @@ export class UsersComponent implements OnInit {
       //   this.showPosts = false;
       //   this.showNoPosts = true;
       // }
-    });
+    // });
   }
 
   // get services

@@ -43,8 +43,6 @@ export class ActivityComponent implements OnInit {
     this.sub = this.route.parent.params.subscribe(params => {
       this.id = +params.id; // (+) converts string 'id' to a number
       console.log(params);
-
-      // In a real app: dispatch action to load the details here.
     });
     console.log(this.id);
     this.usersData.getUser(this.id).subscribe(usersData => {
