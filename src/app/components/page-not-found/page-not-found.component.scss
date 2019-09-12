@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    border: 1px dotted black;
+    // border: 1px dotted black;
   }
 
   &__icon {
@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px dotted black;
+    // border: 1px dotted black;
     i {
       font-size: 75px;
       // box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.5);
@@ -27,6 +27,6 @@
 
   &__message {
     flex: 1;
-    border: 1px dotted black;
+    // border: 1px dotted black;
   }
 }
